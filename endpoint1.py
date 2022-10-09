@@ -5,7 +5,6 @@ import os
 from flask import request
 import pickle
 import numpy as np
-import numeritos as nito
 import re
 from nltk.corpus import stopwords
 from nltk.stem.snowball import SnowballStemmer
@@ -46,7 +45,6 @@ def predict():
 
     text = str(request.args["text"])
     
-    text=nito.clean_emoji(text)
     text=signs_tweets(text)
     text=remove_links(text)
     text=remove_stopwords(text)
